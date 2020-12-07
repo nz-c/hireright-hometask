@@ -38,6 +38,28 @@ public class WeatherTest {
 			e.printStackTrace();
 		}
 	}
+	
+	@Test
+	public void testParamValueCase() {
+		Service service = getService();
+		
+		// create and test request
+		Map<String, String[]> params = null;
+		ServiceRequest request = null;
+		StringWriter writer = null;
+		
+		params = new HashMap<>();
+		params.put("cityCode", new String[] {"tln"});
+		request = new ServiceRequest("GET", params);
+		writer = new StringWriter();
+				
+		try {
+			assertEquals(Service.STATUS.OK , service.processAndWrite(request, writer));
+			assertEquals("{\"data\":\"Cloudy 4\u00B0C, Percipitation 30%, Wind 5m/s NW\"}", writer.toString());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 
 	@Test
 	public void testOkPostRequest() {
