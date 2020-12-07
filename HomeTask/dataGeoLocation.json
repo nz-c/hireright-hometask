@@ -1,0 +1,12 @@
+[
+	{
+		"id": "1",
+		"zipCode": "1000",
+		"timezone": "UTC+1:00"
+	},
+	{
+		"id": "2",
+		"zipCode": "1001",
+		"timezone": "UTC+5:00"
+	}
+]

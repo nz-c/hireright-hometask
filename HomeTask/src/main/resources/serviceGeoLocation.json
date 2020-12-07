@@ -1,0 +1,20 @@
+{
+	"name":"Geo-location Service",
+	"path":"/location",
+	"rules":[
+		{
+			"ruleType":"method",
+			"allowedMethods": ["POST"]
+		},
+		{
+			"ruleType":"param",
+			"mandatoryParameter":"zipCode"
+		}
+	],
+	"dataProvider":
+		{
+			"sourceType":"jsonFile",
+			"dataField": "timezone",
+			"fileName":"C:/Users/aleks/eclipse-workspace-maven/HomeTask/dataGeoLocation.json"
+		}
+}

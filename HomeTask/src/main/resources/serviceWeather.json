@@ -1,0 +1,16 @@
+{
+	"name":"Weather Service",
+	"path":"/weather",
+	"rules":[
+		{
+			"ruleType":"param",
+			"mandatoryParameter":"cityCode"
+		}
+	],
+	"dataProvider":
+		{
+			"sourceType":"jsonFile",
+			"dataField": "weatherInfo",
+			"fileName":"C:/Users/aleks/eclipse-workspace-maven/HomeTask/dataWeather.json"
+		}
+}

@@ -1,0 +1,12 @@
+[
+	{
+		"id": "1",
+		"cityCode": "TLN",
+		"weatherInfo": "Cloudy 4\u00B0C, Percipitation 30%, Wind 5m/s NW"
+	},
+	{
+		"id": "2",
+		"cityCode": "TRT",
+		"weatherInfo": "Sunny 6\u00B0C, Percipitation 2%, Wind 3m/s NW"
+	}
+]

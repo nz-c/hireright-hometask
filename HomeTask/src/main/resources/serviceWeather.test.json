@@ -1,0 +1,16 @@
+{
+	"name":"Weather Service",
+	"path":"/weather",
+	"rules":[
+		{
+			"ruleType":"param",
+			"mandatoryParameter":"cityCode"
+		}
+	],
+	"dataProvider":
+		{
+			"sourceType":"jsonFile",
+			"dataField": "weatherInfo",
+			"fileName":"/usr/local/hometask/data/dataWeather.json"
+		}
+}

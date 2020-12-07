@@ -1,0 +1,20 @@
+{
+	"name":"Geo-location Service",
+	"path":"/location",
+	"rules":[
+		{
+			"ruleType":"method",
+			"allowedMethods": ["POST"]
+		},
+		{
+			"ruleType":"param",
+			"mandatoryParameter":"zipCode"
+		}
+	],
+	"dataProvider":
+		{
+			"sourceType":"jsonFile",
+			"dataField": "timezone",
+			"fileName":"/usr/local/hometask/data/dataGeoLocation.json"
+		}
+}
