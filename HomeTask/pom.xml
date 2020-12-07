@@ -46,6 +46,7 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+
 	<build>
 		<finalName>HomeTask</finalName>
 		<plugins>
@@ -61,20 +62,12 @@
 				<version>3.2.3</version>
 			</plugin>
 
-
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>exec-maven-plugin</artifactId>
 				<version>3.0.0</version>
 				<executions>
-
-					<!-- execution> <id>docker-rm</id> <phase>clean</phase> <goals> <goal>exec</goal> 
-						</goals> <configuration> <executable>docker</executable> <arguments> <argument>rm</argument> 
-						<argument>hometask</argument> <argument>-f</argument> </arguments> </configuration> 
-						</execution -->
-
 					<execution>
-						<id>docker-build</id>
 						<phase>install</phase>
 						<goals>
 							<goal>exec</goal>
@@ -92,6 +85,8 @@
 
 				</executions>
 			</plugin>
+
+
 		</plugins>
 	</build>
 
@@ -147,12 +142,14 @@
 											file="${project.build.outputDirectory}/serviceGeoLocation.json" />
 										<delete
 											file="${project.build.outputDirectory}/log4j2.xml" />
-										<copy file="${project.build.outputDirectory}/serviceWeather.test.json"
+										<copy
+											file="${project.build.outputDirectory}/serviceWeather.test.json"
 											tofile="${project.build.outputDirectory}/serviceWeather.json" />
 										<copy
 											file="${project.build.outputDirectory}/serviceGeoLocation.test.json"
 											tofile="${project.build.outputDirectory}/serviceGeoLocation.json" />
-										<copy file="${project.build.outputDirectory}/log4j2.test.xml"
+										<copy
+											file="${project.build.outputDirectory}/log4j2.test.xml"
 											tofile="${project.build.outputDirectory}/log4j2.xml" />
 										<delete
 											file="${project.build.outputDirectory}/serviceWeather.test.json" />
@@ -165,9 +162,17 @@
 							</execution>
 						</executions>
 					</plugin>
+					<plugin>
+						<artifactId>maven-surefire-plugin</artifactId>
+						<configuration>
+							<skipTests>true</skipTests>
+						</configuration>
+					</plugin>
 				</plugins>
 			</build>
 		</profile>
 	</profiles>
 
 </project>
+
+
