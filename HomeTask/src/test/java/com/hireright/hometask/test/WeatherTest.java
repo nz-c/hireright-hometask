@@ -27,7 +27,29 @@ public class WeatherTest {
 		StringWriter writer = null;
 		
 		params = new HashMap<>();
-		params.put("zipCode", new String[] {"1000"});
+		params.put("cityCode", new String[] {"TLN"});
+		request = new ServiceRequest("GET", params);
+		writer = new StringWriter();
+				
+		try {
+			assertEquals(Service.STATUS.OK , service.processAndWrite(request, writer));
+			assertEquals("\"Cloudy 4\u00B0C, Percipitation 30%, Wind 5m/s NW\"", writer.toString());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	@Test
+	public void testOkPostRequest() {
+		Service service = getService();
+		
+		// create and test request
+		Map<String, String[]> params = null;
+		ServiceRequest request = null;
+		StringWriter writer = null;
+		
+		params = new HashMap<>();
+		params.put("cityCode", new String[] {"TLN"});
 		request = new ServiceRequest("POST", params);
 		writer = new StringWriter();
 				
@@ -49,28 +71,7 @@ public class WeatherTest {
 		StringWriter writer = null;
 		
 		params = new HashMap<>();
-		params.put("zipCodeWrong", new String[] {"1000"});
-		request = new ServiceRequest("POST", params);
-		writer = new StringWriter();
-		
-		try {
-			assertEquals(Service.STATUS.INVALID_REQUEST , service.processAndWrite(request, writer));
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-
-	@Test
-	public void testIncorrectMethodRequest() {
-		Service service = getService();
-		
-		// create and test request
-		Map<String, String[]> params = null;
-		ServiceRequest request = null;
-		StringWriter writer = null;
-		
-		params = new HashMap<>();
-		params.put("zipCode", new String[] {"1000"});
+		params.put("cityCodeWrong", new String[] {"TLN"});
 		request = new ServiceRequest("GET", params);
 		writer = new StringWriter();
 		
@@ -91,7 +92,7 @@ public class WeatherTest {
 		StringWriter writer = null;
 		
 		params = new HashMap<>();
-		params.put("zipCode", new String[] {"9999"});
+		params.put("cityCode", new String[] {"XYZ"});
 		request = new ServiceRequest("GET", params);
 		writer = new StringWriter();
 		
@@ -106,13 +107,13 @@ public class WeatherTest {
 		assertNotNull(ServiceRegistry.getInstance());
 		
 		try {
-			ServiceRegistry.getInstance().loadAndRegister(new FileInputStream(new File("target/classes/serviceGeoLocation.json")));
+			ServiceRegistry.getInstance().loadAndRegister(new FileInputStream(new File("target/classes/serviceWeather.json")));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 
 		// check service is created
-		Service service = ServiceRegistry.getInstance().get("/location").orElse(null);
+		Service service = ServiceRegistry.getInstance().get("/weather").orElse(null);
 		assertNotNull(service);
 		
 		return service;
