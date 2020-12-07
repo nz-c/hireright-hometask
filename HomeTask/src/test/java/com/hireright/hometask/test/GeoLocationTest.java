@@ -15,7 +15,7 @@ import com.hireright.hometask.service.Service;
 import com.hireright.hometask.service.ServiceRegistry;
 import com.hireright.hometask.service.ServiceRequest;
 
-public class WeatherTests {
+public class GeoLocationTest {
 	
 	@Test
 	public void testOkRequest() {
@@ -27,8 +27,8 @@ public class WeatherTests {
 		StringWriter writer = null;
 		
 		params = new HashMap<>();
-		params.put("zipCode", new String[] {"1000"});
-		request = new ServiceRequest("POST", params);
+		params.put("cityCode", new String[] {"TLN"});
+		request = new ServiceRequest("GET", params);
 		writer = new StringWriter();
 				
 		try {
@@ -49,28 +49,7 @@ public class WeatherTests {
 		StringWriter writer = null;
 		
 		params = new HashMap<>();
-		params.put("zipCodeWrong", new String[] {"1000"});
-		request = new ServiceRequest("POST", params);
-		writer = new StringWriter();
-		
-		try {
-			assertEquals(Service.STATUS.INVALID_REQUEST , service.processAndWrite(request, writer));
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-
-	@Test
-	public void testIncorrectMethodRequest() {
-		Service service = getService();
-		
-		// create and test request
-		Map<String, String[]> params = null;
-		ServiceRequest request = null;
-		StringWriter writer = null;
-		
-		params = new HashMap<>();
-		params.put("zipCode", new String[] {"1000"});
+		params.put("cityCodeWrong", new String[] {"TLN"});
 		request = new ServiceRequest("GET", params);
 		writer = new StringWriter();
 		
@@ -91,7 +70,7 @@ public class WeatherTests {
 		StringWriter writer = null;
 		
 		params = new HashMap<>();
-		params.put("zipCode", new String[] {"9999"});
+		params.put("cityCode", new String[] {"XYZ"});
 		request = new ServiceRequest("GET", params);
 		writer = new StringWriter();
 		
@@ -106,13 +85,13 @@ public class WeatherTests {
 		assertNotNull(ServiceRegistry.getInstance());
 		
 		try {
-			ServiceRegistry.getInstance().loadAndRegister(new FileInputStream(new File("target/classes/serviceGeoLocation.json")));
+			ServiceRegistry.getInstance().loadAndRegister(new FileInputStream(new File("target/classes/serviceWeather.json")));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 
 		// check service is created
-		Service service = ServiceRegistry.getInstance().get("/location").orElse(null);
+		Service service = ServiceRegistry.getInstance().get("/weather").orElse(null);
 		assertNotNull(service);
 		
 		return service;
