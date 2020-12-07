@@ -33,7 +33,7 @@ public class WeatherTest {
 				
 		try {
 			assertEquals(Service.STATUS.OK , service.processAndWrite(request, writer));
-			assertEquals("\"Cloudy 4\u00B0C, Percipitation 30%, Wind 5m/s NW\"", writer.toString());
+			assertEquals("{\"data\":\"Cloudy 4\u00B0C, Percipitation 30%, Wind 5m/s NW\"}", writer.toString());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -55,7 +55,7 @@ public class WeatherTest {
 				
 		try {
 			assertEquals(Service.STATUS.OK , service.processAndWrite(request, writer));
-			assertEquals("\"Cloudy 4\u00B0C, Percipitation 30%, Wind 5m/s NW\"", writer.toString());
+			assertEquals("{\"data\":\"Cloudy 4\u00B0C, Percipitation 30%, Wind 5m/s NW\"}", writer.toString());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

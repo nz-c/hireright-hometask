@@ -33,7 +33,7 @@ public class GeoLocationTest {
 				
 		try {
 			assertEquals(Service.STATUS.OK , service.processAndWrite(request, writer));
-			assertEquals("\"UTC+1:00\"", writer.toString());
+			assertEquals("{\"data\":\"UTC+1:00\"}", writer.toString());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

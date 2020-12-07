@@ -21,6 +21,9 @@ import com.hireright.hometask.util.Log;
 public class MockingServlet extends HttpServlet {
 	
 	private static final long serialVersionUID = -2963473875431356722L;
+	
+	public static final String CONTENT_TYPE = "application/json";
+	public static final String ENCODING = "UTF-8";
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -41,7 +44,8 @@ public class MockingServlet extends HttpServlet {
 	private void doAll(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Log.TO.info("request received: " + request.getPathInfo());
 
-		response.setContentType("text/plain");
+		response.setContentType(MockingServlet.CONTENT_TYPE);
+		response.setCharacterEncoding(MockingServlet.ENCODING);
 		
 		int status = ServiceRegistry.getInstance().get(request.getPathInfo()).map((service) -> {
 			try {

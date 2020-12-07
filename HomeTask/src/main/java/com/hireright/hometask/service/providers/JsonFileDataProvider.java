@@ -56,12 +56,12 @@ public class JsonFileDataProvider implements DataProvider {
 		ObjectMapper mapper = new ObjectMapper();
 		
 		SimpleModule module = new SimpleModule();
-		module.addDeserializer(Item.class, new ItemDeserializer(dataField, params));
+		module.addDeserializer(ResponseData.class, new ItemDeserializer(dataField, params));
 		mapper.registerModule(module);
 		
 		try {
-			return mapper.readValue(new File(this.fileName),  new TypeReference<List<Item>>(){})
-					.stream().filter(e -> e != null).map(Item::getData).findFirst();
+			return mapper.readValue(new File(this.fileName),  new TypeReference<List<ResponseData>>(){})
+					.stream().filter(e -> e != null).findFirst();
 		} catch (IOException e) {
 			Log.TO.error(e);
 		}
@@ -69,16 +69,16 @@ public class JsonFileDataProvider implements DataProvider {
 	}
 	
 	/**
-	 * Item holds data read from the source file.
+	 * Represents response, wraps actual data read from the source file.
 	 */
-	class Item {
+	class ResponseData {
 		private String data;
 		
 		
-		public Item() {
+		public ResponseData() {
 		}
 
-		public Item(String data) {
+		public ResponseData(String data) {
 			this.data = data;
 		}
 
@@ -97,7 +97,7 @@ public class JsonFileDataProvider implements DataProvider {
 	 * filtering criteria.
 	 * 
 	 */
-	class ItemDeserializer extends StdDeserializer<Item> { 
+	class ItemDeserializer extends StdDeserializer<ResponseData> { 
 		
 		private static final long serialVersionUID = 7425037862625217986L;
 		
@@ -115,7 +115,7 @@ public class JsonFileDataProvider implements DataProvider {
 	    }
 
 	    @Override
-	    public Item deserialize(JsonParser jp, DeserializationContext ctxt) throws IOException, JsonProcessingException {
+	    public ResponseData deserialize(JsonParser jp, DeserializationContext ctxt) throws IOException, JsonProcessingException {
 	        JsonNode node = jp.getCodec().readTree(jp);
 	        
 	        Iterator<Entry<String, JsonNode>> it = node.fields();
@@ -144,7 +144,7 @@ public class JsonFileDataProvider implements DataProvider {
 	        }
 	        
 	        // found
-	        return new Item(value);
+	        return new ResponseData(value);
 	    }
 	}
 
