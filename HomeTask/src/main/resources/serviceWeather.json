@@ -11,6 +11,6 @@
 		{
 			"sourceType":"jsonFile",
 			"dataField": "weatherInfo",
-			"fileName":"C:/Users/aleks/eclipse-workspace-maven/HomeTask/dataWeather.json"
+			"fileName":"dataWeather.json"
 		}
 }

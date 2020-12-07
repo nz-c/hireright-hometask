@@ -15,6 +15,6 @@
 		{
 			"sourceType":"jsonFile",
 			"dataField": "timezone",
-			"fileName":"C:/Users/aleks/eclipse-workspace-maven/HomeTask/dataGeoLocation.json"
+			"fileName":"dataGeoLocation.json"
 		}
 }
