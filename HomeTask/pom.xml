@@ -77,7 +77,7 @@
 							<arguments>
 								<argument>build</argument>
 								<argument>-t</argument>
-								<argument>hometask</argument>
+								<argument>alekseinz/hometask</argument>
 								<argument>.</argument>
 							</arguments>
 						</configuration>
