@@ -1,11 +1,11 @@
-package com.hireright.hometask.service;
+package com.hr.hometask.service;
 
 import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
-import com.hireright.hometask.util.SerializationUtil;
+import com.hr.hometask.util.SerializationUtil;
 
 /**
  * Service Registry. Can be used by clients to register and retrieve 

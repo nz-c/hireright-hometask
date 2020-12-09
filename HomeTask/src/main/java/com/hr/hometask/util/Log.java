@@ -1,4 +1,4 @@
-package com.hireright.hometask.util;
+package com.hr.hometask.util;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -11,6 +11,6 @@ import org.apache.logging.log4j.Logger;
  */
 public class Log {
 	
-	public final static Logger TO = LogManager.getLogger("com.hireright.hometask");
+	public final static Logger TO = LogManager.getLogger("com.hr.hometask");
 
 }

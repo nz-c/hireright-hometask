@@ -1,8 +1,8 @@
-package com.hireright.hometask.service.validators;
+package com.hr.hometask.service.validators;
 
-import com.hireright.hometask.service.ServiceRequest;
-import com.hireright.hometask.service.Validator;
-import com.hireright.hometask.util.Log;
+import com.hr.hometask.service.ServiceRequest;
+import com.hr.hometask.service.Validator;
+import com.hr.hometask.util.Log;
 
 /**
  * Validator is used to check whether a mandatory parameter is present

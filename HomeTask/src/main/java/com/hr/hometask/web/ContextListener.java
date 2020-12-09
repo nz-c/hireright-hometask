@@ -1,4 +1,4 @@
-package com.hireright.hometask.web;
+package com.hr.hometask.web;
 
 import java.io.InputStream;
 
@@ -6,8 +6,8 @@ import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
 
-import com.hireright.hometask.service.ServiceRegistry;
-import com.hireright.hometask.util.Log;
+import com.hr.hometask.service.ServiceRegistry;
+import com.hr.hometask.util.Log;
 
 /**
  * Lister is used to load service configuration.

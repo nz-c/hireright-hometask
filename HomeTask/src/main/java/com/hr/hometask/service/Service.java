@@ -1,11 +1,11 @@
-package com.hireright.hometask.service;
+package com.hr.hometask.service;
 
 import java.io.IOException;
 import java.io.Writer;
 import java.util.List;
 import java.util.Optional;
 
-import com.hireright.hometask.util.SerializationUtil;
+import com.hr.hometask.util.SerializationUtil;
 
 /**
  * Service class represents mocking service. The class is constructed

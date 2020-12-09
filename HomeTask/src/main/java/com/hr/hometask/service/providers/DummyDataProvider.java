@@ -1,9 +1,9 @@
-package com.hireright.hometask.service.providers;
+package com.hr.hometask.service.providers;
 
 import java.util.Map;
 import java.util.Optional;
 
-import com.hireright.hometask.service.DataProvider;
+import com.hr.hometask.service.DataProvider;
 
 public class DummyDataProvider implements DataProvider {
 	

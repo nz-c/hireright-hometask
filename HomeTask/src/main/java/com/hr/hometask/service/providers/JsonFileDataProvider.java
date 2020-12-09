@@ -1,4 +1,4 @@
-package com.hireright.hometask.service.providers;
+package com.hr.hometask.service.providers;
 
 import java.io.File;
 import java.io.IOException;
@@ -17,8 +17,8 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import com.fasterxml.jackson.databind.module.SimpleModule;
-import com.hireright.hometask.service.DataProvider;
-import com.hireright.hometask.util.Log;
+import com.hr.hometask.service.DataProvider;
+import com.hr.hometask.util.Log;
 
 /**
  * Use json file as a data provider. 

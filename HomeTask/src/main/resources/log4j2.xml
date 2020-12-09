@@ -23,7 +23,7 @@
   
   <Loggers>
 
-    <Logger name="com.hireright.hometask" level="info" additivity="false">
+    <Logger name="com.hr.hometask" level="info" additivity="false">
       <AppenderRef ref="LOCALHOST" />
     </Logger>
     

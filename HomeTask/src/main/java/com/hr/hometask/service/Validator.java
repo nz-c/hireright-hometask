@@ -1,4 +1,4 @@
-package com.hireright.hometask.service;
+package com.hr.hometask.service;
 
 /**
  * Service request validation.

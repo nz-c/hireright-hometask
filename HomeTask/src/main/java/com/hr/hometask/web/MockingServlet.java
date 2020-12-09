@@ -1,4 +1,4 @@
-package com.hireright.hometask.web;
+package com.hr.hometask.web;
 
 import java.io.IOException;
 
@@ -8,9 +8,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.hireright.hometask.service.ServiceRegistry;
-import com.hireright.hometask.service.ServiceRequest;
-import com.hireright.hometask.util.Log;
+import com.hr.hometask.service.ServiceRegistry;
+import com.hr.hometask.service.ServiceRequest;
+import com.hr.hometask.util.Log;
 
 
 /**

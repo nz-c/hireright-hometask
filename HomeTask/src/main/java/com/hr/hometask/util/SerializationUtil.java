@@ -1,4 +1,4 @@
-package com.hireright.hometask.util;
+package com.hr.hometask.util;
 
 import java.io.File;
 import java.io.IOException;
@@ -9,12 +9,12 @@ import java.util.Optional;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.jsontype.NamedType;
-import com.hireright.hometask.service.DataProvider;
-import com.hireright.hometask.service.Validator;
-import com.hireright.hometask.service.providers.DummyDataProvider;
-import com.hireright.hometask.service.providers.JsonFileDataProvider;
-import com.hireright.hometask.service.validators.MandantoryParameterValidator;
-import com.hireright.hometask.service.validators.MethodValidator;
+import com.hr.hometask.service.DataProvider;
+import com.hr.hometask.service.Validator;
+import com.hr.hometask.service.providers.DummyDataProvider;
+import com.hr.hometask.service.providers.JsonFileDataProvider;
+import com.hr.hometask.service.validators.MandantoryParameterValidator;
+import com.hr.hometask.service.validators.MethodValidator;
 
 /**
  * Class provides helper methods used to serialize and deserialize
